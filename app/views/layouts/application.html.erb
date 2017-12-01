@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lovetablefinal2</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  	<%= render 'layouts/header' %>
+  	<div class="container">
+  		<% flash.each do |name, msg| %>
+  		<%= content_tag(:div, msg, class: "alert alert-info") %>
+  		<% end %>
+   	 <%= yield %>
+   	</div>
+
+    <footer class="footer-distributed">
+      <div class="footer-right">
+        <a href="#">
+          <%= image_tag "facebook.png"%>
+        </a>
+        <a href="#">
+          <%= image_tag "google.png"%>
+        </a>
+        <a href="#">
+          <%= image_tag "instagram.png"%>
+        </a>
+        <a href="#">
+          <%= image_tag "snapchat.png"%>
+        </a>
+          <a href="#">
+          <%= image_tag "twitter.png"%>
+        </a>
+        <a href="#">
+          <%= image_tag "youtube.png"%>
+        </a>
+      </div>    
+
+      <div class="footer-left">   
+
+      <p class="footer-links">
+      <%= link_to "Love Table", root_path %>
+      ·
+      <%= link_to "Profiles", profiles_path %>
+      ·
+      <%= link_to "About Us", contacts_path %>
+      ·
+      <%= link_to "Events", events_path %>
+      ·
+      <%= link_to "Contact", contacts_path %>
+      </p>    
+
+      <p>Love Table &copy; 2017</p>
+      </div> 
+    </footer>
+  
+  </body>    
+
+
+</html>

@@ -1,0 +1,17 @@
+<% if !user_signed_in? %>
+  <div class="jumbotron">
+  <h1>Find Love While You Share A Meal</h1>
+  <p>The dating site that helps you find love or someone to share a lovely meal with!</p>
+  <p><%= link_to "Sign Up To Find Your Love", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
+  </div>
+<% end %>
+
+<div class="row">
+  <% @profiles.each do |profile| %>
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <%= link_to (image_tag profile.image.url(:medium), class: 'image'), profile %>
+      </div>
+    </div>
+  <% end %>
+</div>

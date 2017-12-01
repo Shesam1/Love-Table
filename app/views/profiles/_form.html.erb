@@ -1,0 +1,50 @@
+<%#= form_with(model: profile, local: true) do |form| %>
+<%#= form_for@profile, html: { multipart: true } do |form| %>
+<%= form_for @profile, html: { multipart: true } do |form| %>
+  <% if profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+      <% profile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :profile_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :profile_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :age %>
+    <%= form.number_field :age, id: :profile_age %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location, id: :profile_location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hunger_rating %>
+    <%= form.text_field :hunger_rating, id: :profile_hunger_rating %>
+  </div>
+
+    <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image, id: :profile_hunger_rating %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
